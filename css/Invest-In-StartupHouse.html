@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PropertyCake - Investment Prospect #2</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--- link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <!--- link href="css/full-slider.css" rel="stylesheet" -->
+	<!--- link href="css/featurette.css" rel="stylesheet" -->
+     <link href="css/homecss.css" rel="stylesheet">
+
+   
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+
+   <link href="css/plugins/social-buttons/social-buttons.css" rel="stylesheet">
+   <script type="text/javascript" src="http://www.google.com/jsapi"></script>  
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <script src="js/homeapp.js"></script>
+
+    
+    
+<link rel="stylesheet" href="js/bootstrap.css">
+<link rel="stylesheet" href="js/jquery.css">
+    
+    <style type="text/css">
+
+   
+h1 {background-color: black; color:white}   
+
+.standout  {background-color: black; color:white; margin: 40px;}
+.plainwhite  {color:white}
+ .lobster {font-family: 'Lobster', cursive; }    
+ .headlobster {font-family: 'Lobster', cursive; font-size:20px }    
+
+ .headlink {font-size: 12px;}
+
+
+.prospect { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+.prospect > h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+.prospect > h2 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+
+
+.prospect > h3 { 
+   position: absolute; 
+   top: 0px; 
+   left: 0; 
+   width: 100%; 
+}
+
+.prospect > h3 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+
+.prospect > span.spacer {
+   padding:0 5px;
+}
+    </style>
+    
+    
+    <style type="text/css" media="screen">
+		#embedded_css{background:#eee;border-radius: 5px;color:#444;font-size:12px;height:200px;padding:20px 20px;overflow:auto;text-shadow: none;white-space:pre}
+		#instructions{background:#444;border-radius: 10px;color:#ccc;margin-top:-20px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);}
+		#plug{border-top: 1px solid #DDD;clear:both;margin-top:20px;padding-top: 22px;}
+		.ui-slider {clear:left;cursor:pointer;float:left;margin: 0 0 15px;width: 99%;}
+		a, a:hover{color:#fff;text-decoration:none;}
+		#plug a, #plug a:hover{color:hsl(0, 100%, 62%);}
+		button{clear:left;display:block;float:left;margin:15px auto 22px;width:100%}
+		#instructions h2, #instructions h3{color:#eee}
+		#plug h4{background:#DCEAF4;border-radius: 10px;padding:15px;}
+		#instructions strong{color:#fff}
+	</style>
+</head>
+
+<body ng-app="homeApp" ng-controller="homeController" >
+
+
+
+
+    
+<div class="container" ng-controller="coffeeController">
+		<section>
+			<div class="page-header">
+ 
+              
+                <h1>Investment Opportunity #2 - Calculations &amp; Estimates</h1>
+			</div>
+		</section>
+		<section style="padding-top:20px">
+   <form name="userForm" id="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+            <div class="row" >
+				<div class="span6 columns">
+			
+                    <h2>Cost of Property <small id="property_value" >400,000</small><small>GBP</small></h2>
+                   	<div id="property"></div>
+				
+                    <h2>Annual Equity Growth <small id="equity_value" ></small></h2>
+                    
+                    
+					<div id="equity"></div>
+					<h2>Monthly Rent <small id="monthly_value"></small></h2>
+					<div id="monthly"></div>
+				
+                   
+                        
+                        
+                    <h2>Occupancy Rate <small id="occupancy_value"></small></h2>
+					<div id="occupancy"></div>
+					<h2>Monthly Bills <small id="bills_value"></small></h2>
+					<div id="bills"></div>
+					
+                    
+                     <!--- Temp DEBUG --->
+                   <input ng-model='keyfacts.bills' style="visibility:hidden;"  />
+            
+                    <input ng-model='keyfacts.property' style="visibility:hidden;" />
+            
+                    
+                    <input ng-model='keyfacts.occupancy' style="visibility:hidden;"/>
+            
+                    <input ng-model='keyfacts.rent' style="visibility:hidden;"/>
+            
+                    <input id="msg" ng-model='keyfacts.income' style="visibility:hidden;"/>
+           
+                      <input ng-model='keyfacts.investment' style="visibility:hidden;"/>
+           
+              
+                 <hr>
+                    <strong>Amount in USD(x1.7) : </strong> {{keyfacts.property*1.7}} | {{keyfacts.property*1.7*(keyfacts.investment/100)| customCurrency:"&dollar;":",":".":0}}<br/>
+                 <strong>Rent in USD (x1.7) : </strong> {{keyfacts.rent*1.7}} | {{keyfacts.rent*1.7*(keyfacts.investment/100)| customCurrency:"&dollar;":",":".":0}} <br/>
+                    <br/>
+                    <hr>
+                    
+                    <div id="plug2">
+            <div>
+              <div >
+                    
+                  
+               
+                  
+                  <h2>Investment Share <small id="investment_value"></small></h2>
+				  <div id="investment"></div>
+				   
+             <button class="btn custom large" onclick="javascript:alert('Please email axels@siliconmanor.com for further details. ');">Express Interest in amount &raquo;</button>
+			     
+                  
+                  <br/>
+                     
+              </div>
+            </div>
+						
+					</div>
+				</div>
+				<div id="instructions" class="span10 columns">
+				
+                    <div style="padding:20px">
+					<h2>Silicon Manor - Startup house</h2>
+					<p> <strong>A community house where entrepreneurs can work, network, live and stay overnight when visiting town</strong> </p>
+				
+                        <h3>Our first locations</h3>
+					<p>We currently converting a house in London suburbs, researching location for San Francisco downtown warehouse conversion</p>
+					<h3>Accomodation for everyone</h3>
+					<p>We plan to offer single ensuite rooms for established business owners, bunk beds for low budget travellers and students. House is managed by inhouse host</p>
+					<div id="embedded_css" style="min-height:450px;padding-top:0px;">
+                        
+                         <div google-chart chart="linechart" id="linechart1" data="houseLineData" type="LineChart" title="Estimated Equity Growth" width="400"></div>
+   
+                        
+                          <div google-chart chart="chart" id="chart1" data="houseData" type="ColumnChart" title="Rental income after Bills - 10% yearly rent revision" width="400"></div>
+   
+                        
+     <div google-chart chart="areachart" id="linechart1" data="houseLineDataPlus" type="AreaChart" title="Estimated Equity Growth + Rental accumulated" width="400"></div>
+                        
+                            
+                        
+                        </div>
+				</div>
+				</div>
+			</div>
+	  </section>
+            
+    </form>        
+            
+    <section>
+      <div class="row">
+        <div class="span12 offset2 columns">
+          <h2>People Interesting in Co-Buying <small>(Investors and would be investors)</small></h2>
+          <div class="row">
+            <div class="span4">
+              <button class="sample btn custom large a" data-h="193" data-s="32" data-l="64", data-p="15"><img src="img/ja.jpg" width="100px"><br/>
+                  Axel Sunnehall </button>
+             
+              
+            </div>
+            <div class="span4">
+              <button class="sample btn custom large b" data-h="36" data-s="100" data-l="50", data-p="10"><img src="img/profilegirl.jpg" width="115px"><br/>
+                  Anonymous </button>
+            </div>
+            <div class="span4">
+               <button class="sample btn custom large b" data-h="36" data-s="100" data-l="50", data-p="10"><img src="img/profile.jpg" width="135px"><br/>
+                  Your in Profile </button>
+            </div>            
+        </div>
+            
+            
+           <div class="row">
+            <div class="span4">
+        Annual Growth - Note: Popular areas like San Francisco and London is likely to outperform country averages. Houseprice News: [<a href="http://www.marketoracle.co.uk/Article43843.html" style="color:gray;"> USA </a>]
+     &nbsp;[<a href="http://www.thisismoney.co.uk/money/mortgageshome/article-1671748/House-prices-What-expect-news-predictions.html" style="color:gray;"> UK </a>]
+                           
+                <div id="chart_div" style="width: 900px; height: 500px;"></div>
+              
+            </div>
+            <div class="span4">
+             
+            </div>
+            <div class="span4">
+               
+            </div>            
+        </div>
+              
+            
+            
+            
+      </div>
+    </section>
+
+	</div>
+
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/colorapp.js" type="text/javascript"></script>
+  <script src="js/color.js" type="text/javascript"></script>
+
+</div>
+
+   
+
+      
+      
+      
+    
+  
+          <p class="featurette-divider"></p>
+
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12 plainwhite">
+            <a class="pull-left headlobster" href="index.html" style="color:black;"><i class="glyphicon glyphicon-adjust"></i> Go Back to </a>
+               
+                <a class="pull-left headlobster" href="/" style="color:black;"><i class="glyphicon glyphicon-adjust"></i> PropertyCake</a>
+                
+                </div>
+            </div>
+        </footer>
+
+    
+
+</body>
+
+</html>
