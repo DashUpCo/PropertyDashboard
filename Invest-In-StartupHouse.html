@@ -8,90 +8,28 @@
     <meta name="author" content="">
 
     <title>PropertyCake - Investment Prospect #2</title>
-
-    <!-- Bootstrap core CSS -->
-    <!--- link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-    <!--- link href="css/full-slider.css" rel="stylesheet" -->
-	<!--- link href="css/featurette.css" rel="stylesheet" -->
-     <link href="css/homecss.css" rel="stylesheet">
-
-   
+    <link href="css/homecss.css" rel="stylesheet">
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/angular.min.js"></script>
 
-   <link href="css/plugins/social-buttons/social-buttons.css" rel="stylesheet">
-   <script type="text/javascript" src="http://www.google.com/jsapi"></script>  
+    <link href="css/plugins/social-buttons/social-buttons.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>  
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
     <script src="js/homeapp.js"></script>
 
-    
-    
-<link rel="stylesheet" href="js/bootstrap.css">
-<link rel="stylesheet" href="js/jquery.css">
+    <link rel="stylesheet" href="js/bootstrap.css">
+    <link rel="stylesheet" href="js/jquery.css">
     
     <style type="text/css">
-
-   
 h1 {background-color: black; color:white}   
-
 .standout  {background-color: black; color:white; margin: 40px;}
 .plainwhite  {color:white}
- .lobster {font-family: 'Lobster', cursive; }    
- .headlobster {font-family: 'Lobster', cursive; font-size:20px }    
+.lobster {font-family: 'Lobster', cursive; }    
+.headlobster {font-family: 'Lobster', cursive; font-size:20px }    
+.headlink {font-size: 12px;}
 
- .headlink {font-size: 12px;}
-
-
-.prospect { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
-}
-
-.prospect > h2 { 
-   position: absolute; 
-   top: 200px; 
-   left: 0; 
-   width: 100%; 
-}
-
-.prospect > h2 span { 
-   color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
-   letter-spacing: -1px;  
-   background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
-   padding: 10px; 
-}
-
-
-.prospect > h3 { 
-   position: absolute; 
-   top: 0px; 
-   left: 0; 
-   width: 100%; 
-}
-
-.prospect > h3 span { 
-   color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
-   letter-spacing: -1px;  
-   background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
-   padding: 10px; 
-}
-
-.prospect > span.spacer {
-   padding:0 5px;
-}
-    </style>
-    
-    
-    <style type="text/css" media="screen">
-		#embedded_css{background:#eee;border-radius: 5px;color:#444;font-size:12px;height:200px;padding:20px 20px;overflow:auto;text-shadow: none;white-space:pre}
+#embedded_css{background:#eee;border-radius: 5px;color:#444;font-size:12px;height:200px;padding:20px 20px;overflow:auto;text-shadow: none;white-space:pre}
 		#instructions{background:#444;border-radius: 10px;color:#ccc;margin-top:-20px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);}
 		#plug{border-top: 1px solid #DDD;clear:both;margin-top:20px;padding-top: 22px;}
 		.ui-slider {clear:left;cursor:pointer;float:left;margin: 0 0 15px;width: 99%;}
@@ -101,21 +39,16 @@ h1 {background-color: black; color:white}
 		#instructions h2, #instructions h3{color:#eee}
 		#plug h4{background:#DCEAF4;border-radius: 10px;padding:15px;}
 		#instructions strong{color:#fff}
-	</style>
+</style>
+
 </head>
 
 <body ng-app="homeApp" ng-controller="homeController" >
 
-
-
-
-    
-<div class="container" ng-controller="coffeeController">
+    <div class="container" ng-controller="coffeeController">
 		<section>
 			<div class="page-header">
- 
-              
-                <h1>Investment Opportunity #2 - Calculations &amp; Estimates</h1>
+             <h1>Investment Opportunity #2 - Calculations &amp; Estimates</h1>
 			</div>
 		</section>
 		<section style="padding-top:20px">
@@ -123,18 +56,15 @@ h1 {background-color: black; color:white}
             <div class="row" >
 				<div class="span6 columns">
 			
-                    <h2>Cost of Property <small id="property_value" >400,000</small><small>GBP</small></h2>
+                    <h2>Cost of Property <small id="property_value" >400,000</small>        <small>GBP</small></h2>
                    	<div id="property"></div>
 				
                     <h2>Annual Equity Growth <small id="equity_value" ></small></h2>
-                    
                     
 					<div id="equity"></div>
 					<h2>Monthly Rent <small id="monthly_value"></small></h2>
 					<div id="monthly"></div>
 				
-                   
-                        
                         
                     <h2>Occupancy Rate <small id="occupancy_value"></small></h2>
 					<div id="occupancy"></div>
@@ -143,18 +73,12 @@ h1 {background-color: black; color:white}
 					
                     
                      <!--- Temp DEBUG --->
-                   <input ng-model='keyfacts.bills' style="visibility:hidden;"  />
-            
+                    <input ng-model='keyfacts.bills' style="visibility:hidden;"  />
                     <input ng-model='keyfacts.property' style="visibility:hidden;" />
-            
-                    
                     <input ng-model='keyfacts.occupancy' style="visibility:hidden;"/>
-            
                     <input ng-model='keyfacts.rent' style="visibility:hidden;"/>
-            
                     <input id="msg" ng-model='keyfacts.income' style="visibility:hidden;"/>
-           
-                      <input ng-model='keyfacts.investment' style="visibility:hidden;"/>
+                    <input ng-model='keyfacts.investment' style="visibility:hidden;"/>
            
               
                  <hr>
@@ -165,17 +89,13 @@ h1 {background-color: black; color:white}
                     
                     <div id="plug2">
             <div>
-              <div >
+              <div>
                     
-                  
-               
-                  
                   <h2>Investment Share <small id="investment_value"></small></h2>
 				  <div id="investment"></div>
 				   
              <button class="btn custom large" onclick="javascript:alert('Please email axels@siliconmanor.com for further details. ');">Express Interest in amount &raquo;</button>
 			     
-                  
                   <br/>
                      
               </div>
@@ -266,21 +186,15 @@ h1 {background-color: black; color:white}
 </div>
 
    
-
-      
-      
-      
-    
-  
           <p class="featurette-divider"></p>
 
 
         <footer>
             <div class="row">
                 <div class="col-lg-12 plainwhite">
-            <a class="pull-left headlobster" href="index.html" style="color:black;"><i class="glyphicon glyphicon-adjust"></i> Go Back to </a>
+            <a class="pull-left headlobster" href="index.html" style="color:black;"><i class="glyphicon glyphicon-adjust"></i> &nbsp;&nbsp;&nbsp;< &nbsp;Go Back to&nbsp;</a>
                
-                <a class="pull-left headlobster" href="/" style="color:black;"><i class="glyphicon glyphicon-adjust"></i> PropertyCake</a>
+                <a class="pull-left headlobster" href="/" style="color:black;"><i class="glyphicon glyphicon-adjust"></i>&nbsp; PropertyCake</a>
                 
                 </div>
             </div>
